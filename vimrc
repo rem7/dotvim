@@ -37,6 +37,8 @@ set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
 set termencoding=utf-8
 " vim: set ft=vim :
 
+set t_ut=
+
 
 " colorscheme molokai
 colorscheme wombat256mod
