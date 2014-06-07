@@ -38,7 +38,8 @@ set termencoding=utf-8
 " vim: set ft=vim :
 
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme wombat256mod
 set history=5000
 
 set shiftwidth=4
@@ -46,8 +47,16 @@ set smartindent
 set softtabstop=4
 set tabstop=4
 
-syntax on
+
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+if exists("g:did_load_filetypes")
+  filetype off
+  filetype plugin indent off
+endif
+set runtimepath+=/Users/rem7/go/misc/vim " replace $GOROOT with the output of: go env GOROOT
 filetype plugin indent on
+syntax on
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -76,4 +85,5 @@ set visualbell                    " No beeping.
 " Syntax Completion
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
 
